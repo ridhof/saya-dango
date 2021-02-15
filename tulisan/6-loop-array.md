@@ -87,7 +87,29 @@ Fungsi untuk array:
 len(scores) // mengembalikan panjang dari array
 ```
 
+Mengakses array:
+1. `data[i]` => copy value dari referensinya
+2. `data[0:2]` => referensi elemen / slice
+
+## Slice
+Reference dari elemen array, deklarasi:
+
+```go
+hari := []string{"Sabtu", "Minggu", "Senin", "Selasa", "Rabu"} // tidak mendefinisikan size seperti array
+hariLibur := hari[0:2] // deklarasi dengan melakukan slicing pada array yang sudah ada
+hariLiburFix := hari[0:2:2] // deklarasi dengan menambahkan argumen kapasitas
+```
+
+Fungsi untuk Slice
+
+```go
+cap(scores) // mengembalikan kapasitas maksimum dari slice
+append(scores, newScoreValue) // menambahkan elemen baru pada slice
+copy(newArray, oldArray) // mengcopy nilai slice dari old ke new, yang dicopy sesuai len newArray
+```
+
 
 ## Reference
 1. [Loop](https://dasarpemrogramangolang.novalagung.com/A-perulangan.html)
 2. [Array](https://dasarpemrogramangolang.novalagung.com/A-array.html)
+3. [Slice](https://dasarpemrogramangolang.novalagung.com/A-slice.html)
