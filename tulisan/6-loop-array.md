@@ -108,8 +108,30 @@ append(scores, newScoreValue) // menambahkan elemen baru pada slice
 copy(newArray, oldArray) // mengcopy nilai slice dari old ke new, yang dicopy sesuai len newArray
 ```
 
+## Map
+Memiliki `key` sebagai index yang dapat diset secara custom, seperti dictionary.
+Deklarasi:
+
+```go
+var laporanHarian map[string]int // nil, tidak dapat diset sebelum dideklarasi
+laporanMingguan := map[string]int{} 
+laporanBulanan := map[string]int{"Januari": 50, "Februari": 42} // dapat dilakukan secara horizontal maupun vertikal
+laporanMake := make(map[[string]int])
+laporanBintang := *new(map[string]int) // pointer
+```
+
+Fungsi pada Map
+
+```go
+// Menghapus item
+delete(laporanBulanan, "Januari")
+
+// Deteksi item dengan key
+value, isExist := laporanBulanan["Januari"] // var kedua opsional
+```
 
 ## Reference
 1. [Loop](https://dasarpemrogramangolang.novalagung.com/A-perulangan.html)
 2. [Array](https://dasarpemrogramangolang.novalagung.com/A-array.html)
 3. [Slice](https://dasarpemrogramangolang.novalagung.com/A-slice.html)
+4. [Map](https://dasarpemrogramangolang.novalagung.com/A-map.html)
