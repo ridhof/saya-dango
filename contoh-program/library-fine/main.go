@@ -69,6 +69,10 @@ func libraryFine(dayReturn, monthReturn, yearReturn, dayDue, monthDue, yearDue i
 	dueDate := time.Date(int(yearDue), getMonth(monthDue), int(dayDue), 0, 0, 0, 0, time.UTC)
 	dateNow := time.Date(int(yearReturn), getMonth(monthReturn), int(dayReturn), 0, 0, 0, 0, time.UTC)
 
+	if dateNow.Before(dueDate) || dateNow.Equal(dueDate) {
+		return 0
+}
+
 	fine := 15 * int32((dateNow.Day() - dueDate.Day()))
 	return fine
 }
@@ -78,4 +82,5 @@ func main() {
 	fmt.Println("Library Fine Calculation Program")
 	fmt.Println(libraryFine(14, 7, 2018, 5, 7, 2018))
 	fmt.Println(libraryFine(9, 6, 2015, 6, 6, 2015))
+	fmt.Println(libraryFine(3, 6, 2015, 6, 6, 2015))
 }
